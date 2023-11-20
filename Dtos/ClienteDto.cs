@@ -13,16 +13,19 @@ namespace EjercicioLista1.Dtos
     internal class ClienteDto
     {
         //Atributos
-        private string nombreCliente;
-        private string apellidosCliente;
+        private long idCliente;
+        private string nombreCliente = "aaaaa";
+        private string apellidosCliente = "aaaaa";
         private string dniCliente;
-        private string fchNacimientoCliente;
-        private string emailCliente;
-        private int tlfCliente;
-        private string fchAltaCliente;
-        private string fchBajaCliente;
+        private string fchNacimientoCliente = "9999/12/31";
+        private string emailCliente = "aaaaa";
+        private int tlfCliente = 111111111;
+        private string fchAltaCliente = "9999/12/31";
+        private string fchBajaCliente = "9999/12/31";
+        
 
         //Getters & Setters
+        public long IdCliente { get => idCliente; set => idCliente = value; }
         public string NombreCliente { get => nombreCliente; set => nombreCliente = value; }
         public string ApellidosCliente { get => apellidosCliente; set => apellidosCliente = value; }
         public string DniCliente { get => dniCliente; set => dniCliente = value; }
@@ -33,8 +36,9 @@ namespace EjercicioLista1.Dtos
         public string FchBajaCliente { get => fchBajaCliente; set => fchBajaCliente = value; }
 
         //Constructores
-        public ClienteDto(string nombreCliente, string apellidosCliente, string dniCliente, string fchNacimientoCliente, string emailCliente, int tlfCliente, string fchAltaCliente, string fchBajaCliente)
+        public ClienteDto(long idCliente,string nombreCliente, string apellidosCliente, string dniCliente, string fchNacimientoCliente, string emailCliente, int tlfCliente, string fchAltaCliente, string fchBajaCliente)
         {
+            this.idCliente = idCliente;
             this.nombreCliente = nombreCliente;
             this.apellidosCliente = apellidosCliente;
             this.dniCliente = dniCliente;
@@ -43,6 +47,21 @@ namespace EjercicioLista1.Dtos
             this.tlfCliente = tlfCliente;
             this.fchAltaCliente = fchAltaCliente;
             this.fchBajaCliente = fchBajaCliente;
+        }
+        public ClienteDto() 
+        { 
+        
+        }
+        //Metodo ToString
+        override
+        public string ToString()
+        {
+            string clienteString = "Id del cliente: "+this.idCliente+"\n"+"Nombre: " + this.nombreCliente + "\n" + "Apellidos: " + this.apellidosCliente + "\n" +
+                "DNI: " + this.dniCliente + "\n" + "Fecha de nacimiento:" + this.fchNacimientoCliente + "\n" + 
+                "Email:" + this.emailCliente + "\n" + "Teléfono: " + this.tlfCliente + "\n" + 
+                "Fecha del alta del cliente: " + this.fchAltaCliente + "\n" + "Fecha de la baja del cliente: " + this.fchBajaCliente;
+
+            return clienteString;
         }
     }
 }

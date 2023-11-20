@@ -18,7 +18,6 @@ namespace EjercicioLista1.Servicios
             int respuesta;
             Console.WriteLine("0. Cerrar App");
             Console.WriteLine("1. Insertar nuevo cliente");
-            Console.WriteLine("2. Mostrar lista");
             Console.WriteLine("¿Que opcion desea utilizar?");
             respuesta=Convert.ToInt32(Console.ReadLine());
 

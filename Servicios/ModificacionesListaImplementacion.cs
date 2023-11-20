@@ -23,30 +23,28 @@ namespace EjercicioLista1.Servicios
         /// <returns></returns>
         private ClienteDto crearCliente()
         {
-            //Variables
-            string nombreCliente, apellidosCliente, dniCliente, fchNacimientoCliente, emailCLiente, fchAltaCliente, fchBajaCliente;
-            int tlfCliente;
 
+            //Creamos un  objeto cliente
+            ClienteDto nuevoCliente = new ClienteDto();
+            //le pedimos al usuario la informacion necesaria
+            Console.WriteLine("Introduzca el id del cliente: ");
+            nuevoCliente.IdCliente=Convert.ToInt64(Console.ReadLine());
             Console.WriteLine("Introduzca su nombre:");
-            nombreCliente = Console.ReadLine();
+            nuevoCliente.NombreCliente = Console.ReadLine();
             Console.WriteLine("Introduzca sus apellidos:");
-            apellidosCliente = Console.ReadLine();
+            nuevoCliente.ApellidosCliente = Console.ReadLine();
             Console.WriteLine("Introduzca su dni");
-            dniCliente = Console.ReadLine();
+            nuevoCliente.DniCliente = Console.ReadLine();
             Console.WriteLine("Introduzca su cumpleaños:");
-            fchNacimientoCliente = Console.ReadLine();
+            nuevoCliente.FchNacimientoCliente = Console.ReadLine();
             Console.WriteLine("Introduzca su email:");
-            emailCLiente = Console.ReadLine();
+            nuevoCliente.EmailCliente = Console.ReadLine();
             Console.WriteLine("Introduzca su numero telefonico");
-            tlfCliente = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Indique la fecha del alta:");
-            fchAltaCliente = Console.ReadLine();
-            Console.WriteLine("Indique la fecha de la baja:");
-            fchBajaCliente = Console.ReadLine();
-
-
-            ClienteDto nuevoCliente=new ClienteDto(nombreCliente,apellidosCliente,dniCliente,fchNacimientoCliente,emailCLiente,tlfCliente,fchAltaCliente,fchBajaCliente);
-            
+            nuevoCliente.TlfCliente = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Introduzca la fecha del alta del cliente:");
+            nuevoCliente.FchAltaCliente = Console.ReadLine();
+            Console.WriteLine("Introduzca la fecha de la baja del cliente:");
+            nuevoCliente.FchBajaCliente = Console.ReadLine();
             return nuevoCliente;
         }
 

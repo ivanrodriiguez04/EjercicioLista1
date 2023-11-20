@@ -21,6 +21,7 @@ namespace EjercicioLista1.Controladores
         static void Main(string[] args) 
         {
             //Creamos los objetos necesarios
+            ClienteDto nuevoCLiente = new ClienteDto();
             MenuInterfaz mi = new MenuImplementacion();
             ModificacionesListaInterfaz mL = new ModificacionesListaImplementacion();
             //variable que controla la entrada y salida del bucle while
@@ -29,22 +30,24 @@ namespace EjercicioLista1.Controladores
             int opcionSeleccionada;
             //lista donde se va a guardar la informacion introducida por el usuario
             List<ClienteDto> listaCliente = new List<ClienteDto>();
-
             //desde la primera iteración debe cumplirse la condición
             while (!cerrarMenu)
             {
                 opcionSeleccionada = mi.mostrarMenuYSeleccion();
-                Console.WriteLine(opcionSeleccionada);
 
                 switch (opcionSeleccionada)
                 {
                     case 0:
-                        Console.WriteLine("[INFO] - Se ejecuta caso 0");
+                        Console.WriteLine("[INFO] - Se va ha cerrar la aplicacion");
                         cerrarMenu = true;
                         break;
                     case 1:
                         Console.WriteLine("[INFO] - Ha seleccionado insertar un nuevo cliente");
                         mL.darAltaCliente(listaCliente);
+                        /*foreach (ClienteDto cliente in listaCliente) 
+                        {
+                            Console.WriteLine(cliente.ToString());
+                        }*/
                         break;
                     default:
                         Console.WriteLine("[INFO] - La opcion seleccionada no coincide con ninguna.");
